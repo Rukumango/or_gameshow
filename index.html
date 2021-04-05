@@ -54,12 +54,91 @@
 				margin-right: -50%;
 				transform: translate(-50%, -50%)
 			}
+
+			button {
+				font-size: 2rem;
+				font-family: Minecraft; src: url('Minecraft.otf');
+			}
 		</style>
 
+		<style>
+			.tooltip {
+			position: absolute;
+			display: inline-block;
+			}
+			
+			.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 140px;
+			background-color: #555;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px;
+			position: absolute;
+			z-index: 1;
+			bottom: 150%;
+			left: 50%;
+			margin-left: -75px;
+			opacity: 0;
+			transition: opacity 0.3s;
+			}
+			
+			.tooltip .tooltiptext::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: #555 transparent transparent transparent;
+			}
+			
+			.tooltip:hover .tooltiptext {
+			visibility: visible;
+			opacity: 1;
+			}
+
+			input {
+				opacity: 0%
+			}
+
+			button {
+				background-color: rgba(0, 0, 0, 0);
+				border: none;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
 			<p id="time"></p>
 		</div>
+		<div class="tooltip" style="bottom: 3.9%; left: 81%;">
+			<button onclick="realmtp()" onmouseout="outFunc()">
+				<span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+				⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+			</button>
+		</div>
+
+		<input type="text" value="/realm tp JJir0_" id="myInput" style="cursor: default;">
+
+		<script>
+			function realmtp() {
+			  var copyText = document.getElementById("myInput");
+			  copyText.select();
+			  copyText.setSelectionRange(0, 99999);
+			  document.execCommand("copy");
+			  
+			  var tooltip = document.getElementById("myTooltip");
+			  tooltip.innerHTML = "Copied: " + copyText.value;
+			}
+			
+			function outFunc() {
+			  var tooltip = document.getElementById("myTooltip");
+			  tooltip.innerHTML = "Copy to clipboard";
+			}
+			</script>
+
 	</body>
 </html>
