@@ -126,12 +126,18 @@
 				⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 			</button>
 		</div>
+		<div class="tooltip" style="bottom: 1%; left: 54.6%;">
+			<button onclick="twitch()" onmouseout="outFunc1()">
+				<span class="tooltiptext" id="myTooltip1">Go to the stream</span>
+				⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+			</button>
+		</div>
 
-		<input type="text" value="/realm tp JJir0_" id="myInput" style="cursor: default;">
+		<input type="text" value="/realm tp JJir0_" id="realm" style="cursor: default;">
 
 		<script>
 			function realmtp() {
-			  var copyText = document.getElementById("myInput");
+			  var copyText = document.getElementById("realm");
 			  copyText.select();
 			  copyText.setSelectionRange(0, 99999);
 			  document.execCommand("copy");
@@ -143,6 +149,18 @@
 			function outFunc() {
 			  var tooltip = document.getElementById("myTooltip");
 			  tooltip.innerHTML = "Copy to clipboard";
+			}
+
+			function twitch() {
+			  window.open("https://www.twitch.tv/jjir0_", "_blank");
+			  
+			  var tooltip = document.getElementById("myTooltip1");
+			  tooltip.innerHTML = "Enjoy the stream";
+			}
+
+			function outFunc1() {
+			  var tooltip = document.getElementById("myTooltip1");
+			  tooltip.innerHTML = "Go to the stream";
 			}
 			</script>
 
