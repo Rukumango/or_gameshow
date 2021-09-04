@@ -121,6 +121,15 @@
 				background-color: rgba(0, 0, 0, 0);
 				border: none;
 			}
+			
+			.popup {
+			  display: none;
+			  border-radius: 25px;
+			  background: #73AD21;
+			  padding: 20px;
+			  width: 200px;
+			  height: 150px;
+			}
 		</style>
 		
 		<style>
@@ -169,15 +178,13 @@
 		
 		<input type="text" value="/realm tp OR_GameShow_" id="realm" style="cursor: default;">
 		
+		<div class="popup" id="realm">
+			
+		</div>
+		
 		<script>
 			function realmtp() {
-			  var copyText = document.getElementById("realm");
-			  copyText.select();
-			  copyText.setSelectionRange(0, 99999);
-			  document.execCommand("copy");
-			  
-			  var tooltip = document.getElementById("myTooltip");
-			  tooltip.innerHTML = "Copied: " + copyText.value;			
+			  document.getElementById("realm").style.display = "block";
 			}
 			
 			function twitch() {
