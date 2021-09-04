@@ -121,18 +121,6 @@
 				background-color: rgba(0, 0, 0, 0);
 				border: none;
 			}
-			
-			.popup {
-			  	display: none;
-			}
-			
-			.box {
-				border-radius: 25px;
-			  	background: #73AD21;
-			  	padding: 20px;
-			  	width: 200px;
-			  	height: 150px;
-			}
 		</style>
 		
 		<style>
@@ -187,12 +175,12 @@
 		
 		<script>
 			function realmtp() {
-			  document.getElementById("popup").style.display = "block";
-			  document.getElementById("box").style.display = "block";
+			  document.getElementById("popup").style.display = "block"; //doesnt work cuz i erased the style
+			  document.getElementById("box").style.display = "block"; //doesnt work cuz i erased the style
 			}
 			
 			function twitch() {
-			  window.open("https://www.twitch.tv/jjir0_", "_blank");
+			  window.open("https://www.twitch.tv/jjir0_", "_blank"); //redirect to twitch
 			}
 		</script>
 		
